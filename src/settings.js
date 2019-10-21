@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Vue Element Admin',
+  title: '餐饮油烟监测管理系统',
 
   /**
    * @type {boolean} true | false
