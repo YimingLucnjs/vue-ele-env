@@ -1,10 +1,19 @@
 /**
 * 创建者：{{ user }}
-* 该页面用于：
+* 该组件用于：
 * 创建时间： {{ date }}
+* @param 参数说明
+* @emit 事件使用说明
 */
 export default {
-    name: '{{ properCase name }}_view',
+    name: '{{ properCase name }}_cmp',
+    props: {
+        // 这是示例数据的通途
+        example: {
+            type: Array,
+            default: () => []
+        }
+    },
     // 数据
     data() {
         return {

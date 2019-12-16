@@ -26,3 +26,8 @@
 3.使用plop命令新建组件
 4.**全局组件**：**大于等于两个**以上页面使用的模块需要抽析于components > global > componentsname
 5.**局部组件**：只有某个页面使用的组件，为了避免单文件过大,可以选择性写入components > part > viewsname > componentsname
+
+### ESLint 规则
+
+1.[ESLint规则介绍官网](https://cn.eslint.org/docs/rules/)
+1.[ESLint介绍简书](https://www.jianshu.com/p/06f942d11d24)

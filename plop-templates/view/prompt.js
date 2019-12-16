@@ -1,5 +1,5 @@
 const { notEmpty } = require('../utils.js')
-
+const moment = require('moment')
 module.exports = {
   description: 'generate a view',
   prompts: [{
@@ -38,12 +38,16 @@ module.exports = {
   ],
   actions: data => {
     const name = '{{name}}'
+		const user = '{{user}}'
+		const date = moment().format('YYYY-MM-DD HH:mm:ss')
     const actions = [{
       type: 'add',
       path: `src/views/${name}/index.vue`,
       templateFile: 'plop-templates/view/vue.hbs',
       data: {
-        name: name,
+        name,
+        date,
+        user,
         template: data.blocks.includes('template'),
         script: data.blocks.includes('script'),
         style: data.blocks.includes('style')
@@ -53,14 +57,18 @@ module.exports = {
       path: `src/views/${name}/index.scss`,
       templateFile: 'plop-templates/view/scss.hbs',
       data: {
-        name: name,
+        name,
+        date,
+        user,
       }
     }, {
       type: 'add',
       path: `src/views/${name}/index.js`,
       templateFile: 'plop-templates/view/js.hbs',
       data: {
-        name: name,
+        name,
+        date,
+        user,
       }
     }]
 
