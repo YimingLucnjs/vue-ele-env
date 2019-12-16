@@ -1,0 +1,21 @@
+{{#if template}}
+<template>
+	<div class="{{ name }}_wrap">
+
+	</div>	  
+</template>
+{{/if}}
+
+{{#if script}}
+<script>
+import {{ properCase name }} from './index.js';
+export default {{ properCase name }};
+</script>
+{{/if}}
+
+{{#if style}}
+<style lang="scss" scoped>
+@import "./index.scss"
+
+</style>
+{{/if}}
