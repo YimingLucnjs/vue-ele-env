@@ -17,15 +17,30 @@
 - **src** 源代码
     - **components** 组件库
         - ~~各自的组件库~~
-            - **global** 全局组件
-            - **part** 局部组件
+            - 全局组件名称
 
 关于组件的规范 
 1.文件夹名称大驼峰命名
 2.文件夹内文件统一为index.vue/ index.scss/ index.js
 3.使用plop命令新建组件
-4.**全局组件**：**大于等于两个**以上页面使用的模块需要抽析于components > global > componentsname
-5.**局部组件**：只有某个页面使用的组件，为了避免单文件过大,可以选择性写入components > part > viewsname > componentsname
+4.**全局组件**：**大于等于两个**以上页面使用的模块需要抽析于components > componentsnamecomponentsname
+
+### 组件测试
+关于测试各自组件的地址如下
+- src
+  - components
+  - router
+    - testrouter
+      - luyiming.js
+      - luyun.js
+      - qiuliang.js
+  - views
+    - testcom
+      - luyiming.vue
+      - luyun.vue
+      - qiuliang.vue
+
+### 命令介绍
 
 ### ESLint 规则
 

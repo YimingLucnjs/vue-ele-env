@@ -10,7 +10,7 @@ module.exports = {
   }, {
 		type: 'input',
 		name: 'user',
-		message: 'component user please',
+		message: 'view creater name please',
 		validate: notEmpty('user')
 	},
   {
