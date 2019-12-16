@@ -7,7 +7,12 @@ module.exports = {
     name: 'name',
     message: 'view name please',
     validate: notEmpty('name')
-  },
+  }, {
+		type: 'input',
+		name: 'user',
+		message: 'component user please',
+		validate: notEmpty('user')
+	},
   {
     type: 'checkbox',
     name: 'blocks',
