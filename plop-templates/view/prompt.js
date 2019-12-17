@@ -1,16 +1,16 @@
 const { notEmpty } = require('../utils.js')
 const moment = require('moment')
 module.exports = {
-  description: 'generate a view',
+  description: '新建一个页面模板，选择请直接 回车 或 输入 1 + 回车',
   prompts: [{
     type: 'input',
     name: 'name',
-    message: 'view name please',
+    message: '输入页面的名字',
     validate: notEmpty('name')
   }, {
 		type: 'input',
 		name: 'user',
-		message: 'view creater name please',
+		message: '输入页面创建者的名字',
 		validate: notEmpty('user')
 	},
   {

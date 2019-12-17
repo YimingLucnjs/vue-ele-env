@@ -1,17 +1,18 @@
-const { notEmpty } = require('../utils.js')
+const { notEmpty, notBigHump } = require('../utils.js')
 const moment = require('moment')
+
 module.exports = {
-	description: 'generate vue component',
+	description: '新建一个组件模板，选择请输入 2 + 回车',
 	prompts: [{
 		type: 'input',
 		name: 'name',
-		message: 'component name please',
-		validate: notEmpty('name')
+		message: '请输入组件的名字，必须大驼峰 例如MyCom',
+		validate: notBigHump('name')
 	}, {
 		type: 'input',
 		name: 'user',
-		message: 'component creater name please',
-		validate: notEmpty('user')
+		message: '请输入组件创建者的名字',
+		validate: notEmpty('user') 
 	},
 	{
 		type: 'checkbox',
@@ -75,8 +76,28 @@ module.exports = {
 				date,
 				user,
 			}
+		}, {
+			
 		}]
 
 		return actions
 	}
 }
+
+/**
+ * import Layout from '@/layout'
+export default [
+    {
+        path: '/qiuliangtest',
+        component: Layout,
+        children: [
+            {
+                path: 'index',
+                component: () => import('@/views/testcom/qiuliang.vue'),
+                name: 'qiuliangtest',
+                meta: { title: '测试组件qiuliang-index', icon: 'documentation', affix: true }
+            }
+        ]
+    }
+]
+ */
