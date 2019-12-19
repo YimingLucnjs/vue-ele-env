@@ -45,8 +45,8 @@ export default {
 				activeArea: [], // 区域高亮,同echarts配置项
 				data: [
 					{
-						name: '南京',
-						company: '某某公司',
+						name: "南京",
+						company: "某某公司",
 						value: 12
 					}
 				]
@@ -65,7 +65,7 @@ export default {
 				lineColor: "rgba(147, 235, 248, .8)"
 			},
 			geoCoordMap: {
-				'南京': [118.802682,32.09318]
+				南京: [118.802682, 32.09318]
 			},
 			option: ""
 		};
@@ -107,7 +107,7 @@ export default {
 								cityJson = {
 									name: data.name,
 									value: data.value,
-									company: data.company,
+									company: data.company
 								};
 								cityData.push(cityJson);
 							});
@@ -146,7 +146,7 @@ export default {
 		 **/
 		createBreadcrumb(name) {
 			var cityToPinyin = {
-				'江苏': "jiangsu"
+				江苏: "jiangsu"
 			};
 			var breadcrumb = {
 				type: "group",
@@ -215,11 +215,14 @@ export default {
 		// 设置effectscatter
 		initSeriesData(data) {
 			var temp = [];
+			const carImg = "image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAFYUlEQVRIS3VVa2wUVRT+7rz2vS19bcuWVkNNmmIKahCiTaomxvpCyw9CTPhhiSRqgo/6C4VGiOEHEGIMGAE10RDxUYlSRFNihEIjGFKVh/JoA6XtdrftbruP2ZmdmXvNvdMXVe+mmcz27HfO+e53vkOw4DDGKgA8DmCTxfKNWXtCzjnjxKQZiTKHKfDRsBpBWKlwVMn/J4ADALoJIYmFWGT+F4yxpQDeMGmuddDoq7iSPiaPmzcJA5sOY6BwQCCh0lvPVoTXOhFPfUKT/EcB7CWE9M/HE+CMMf5s4AEZO97UPbbbN2JcAgEBh3PPXAoezN8IZES9jXi0bHO+WI2e4YUBuEIIEdWQaeA6AB8mrcHmzpF2RXeSUIgHMtFAiAtFGQVlDiQigX/4rx1mwWYmfHIxnq3cbld5lp0C8DKAGzwBBy8H0JFzJtqODL3iS9txeOWQqJWDcXBOA+Am4U+JyKIrN8ZG3plCWKnE+up9+YBc9gmArYSQFAdfZ9DMnu9Gt1SPGpehSQEwRkGIBJmoghb+7tIjCWD+Pj8R76BAddzlfxBPRzqGFOLdKC6ZMdZzLffL6pNjuxUBCgJF8mBFeC1KtNppEMGgSBwzLuN86nNYzIBHDkCGJhJycP7blsjb9lJ/UxeAdmLRfPr70XdCI8ZlUalNTfiVYmyo/hSa5OOXPSsA3k3eSeP0xD6krRg4hTqdhEI0EcMTLPHdh2ci20c1yb+DpArD6W9GXg9lnXF4pCAYHJFk45IvRQcz7bvqcHl2mA2L5jFWuI5Tyf1ImYMiNmcnEVIqsL56f6ZIqeoit/W+zInEe8G8k3L5hgMJCtpqjkCVvNOS45KcAx/Qf0XvxEE8UrYZAaUUPyV2ImndFBcbkEvxXNVOs8rT0Edu5HpyP4+97zecKWiSHxQ2JKhoq/lCgM9UPvcE/sp24/DQSyhVa9FatUtI84fEdqStUYTUSjwV2cZqfA9cJQN6b/ZkYk+AZ+XgCyufP0AuKQS39N9wJnkQKWsQy8OtaAi1oDP2JsYLAyhRa/FkZCur8d1/lYwYl6aOxbaFDZqGRwrAZgY0KYgXaw6LQZo7rsZn9M+Hh/+pxIucM46vRjYjYd5AuVaHNYKW+j4yaQ2nvx5+LcRvXSMBWFRHWK3EC9EDMGgG44V+1PpWugbApxSOUEeeppF3JoVcJ60hdMbaETOuoNJTj3XRD9JFStVxYjp65kT83eCgcQEq8Yup5APzcOkmVKhLcTHThaaSTbieO42sHYfNCqjxr0SRshhD+d9RF2hCv96DnuRH0O1JLAu14LHy9lGvFNxBGKM9g/qF1Z2xdoXLySOFYNIsfFIRmktfRal2N+Lm3zibOiS64jLkiuD/K1ajgopzqc+QKFyFVw5jbdUue7H33i4CuV2Mv0lze47HO6pv6udFAOeWDxO/g5BSLiRWYPqsv/DqeRFhpQJZexxpOwYHFhqCT6ClYsuQTDyz4y+Ma8qKbfx29C3vmNmPgFwieHVYQQAK6yKq8BuXe0d0QGEJG+CFlGl1WB/dZ/jkoo/nGxeXgLDcEeNic1e8QzFpRgwSt1yuYXDbnROLsAR+sXzcOVVlnjqsieywS7TaOy33zmXB9qas4abe5CHfgH4WNi0Iu3Ut1q2ag4rK4XJ/T7AZq4o35INK2RmA3Lks5q+lmTVnM7P1ttFX/sfUUSVuXCMccHYTMQqZKIj6lrPGouftqKdxTCbK/6+5BQkWAXgIQJtJc6sMOhXM2ZNek01pwnZJoOCXiw2/vCjrkQLnAMKXQy9fDvNx3Fn+j8MYkwFwM28BsMq9E1bshpJJvsYAnAPwI4BbhBDe2r/OPx1Fs7Bvd7QTAAAAAElFTkSuQmCC"
 			for (var i = 0; i < data.length; i++) {
 				var geoCoord = this.geoCoordMap[data[i].name];
 				if (geoCoord) {
 					temp.push({
 						name: data[i].name,
+						symbol:carImg,
+						symbolSize: 20,
 						value: geoCoord.concat(data[i].value),
 						company: data[i].company
 					});
@@ -253,6 +256,7 @@ export default {
 		chartInitData() {
 			this.chart = echarts.init(document.getElementById(this.id));
 			// let curGeoJson = {};
+			// let geoData = this.initSeriesData(this.opt.data);
 			this.option = {
 				tooltip: {
 					show: true,
@@ -270,7 +274,7 @@ export default {
 							params.data.name +
 							"<br/>" +
 							"公司名称：" +
-							params.data.company 
+							params.data.company
 						);
 					}
 				},
@@ -457,7 +461,7 @@ export default {
 				},
 				series: [
 					{
-						type: "effectScatter",
+						type: "scatter",
 						coordinateSystem: "geo",
 						showEffectOn: "render",
 						rippleEffect: {
@@ -473,23 +477,45 @@ export default {
 								shadowColor: "#333"
 							}
 						},
+						// type: "custom", //配置显示方式为用户自定义
+						// coordinateSystem: "geo",
+						// itemStyle: {
+						// 	normal: {
+						// 		color: "#46bee9"
+						// 	}
+						// },
+						// renderItem: function(params, api) {
+						// 	//具体实现自定义图标的方法
+						// 	return {
+						// 		type: "image",
+						// 		style: {
+						// 			image: "../../../assets/info_images/car.png",
+						// 			x: api.coord([
+						// 				geoData[params.dataIndex].value[0],
+						// 				geoData[params.dataIndex].value[1]
+						// 			])[0],
+						// 			y: api.coord([
+						// 				geoData[params.dataIndex].value[0],
+						// 				geoData[params.dataIndex].value[1]
+						// 			])[1]
+						// 		}
+						// 	};
+						// },
 						data: this.initSeriesData(this.opt.data)
 					}
 				]
-            };
-            this.chart.setOption(this.option)
-        },
-        chartInit() {
-            // const url = './mixins/data-jiangsu.json'
-            
-            import('../mixins/data-jiangsu.json').then(jsons => {
-                echarts.registerMap('jiangsu', jsons)
-                this.chartInitData()
-            })
-            
-            
-        }
-    }
+			};
+			this.chart.setOption(this.option);
+		},
+		chartInit() {
+			// const url = './mixins/data-jiangsu.json'
+
+			import("../mixins/data-jiangsu.json").then(jsons => {
+				echarts.registerMap("jiangsu", jsons);
+				this.chartInitData();
+			});
+		}
+	}
 };
 </script>
 

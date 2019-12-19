@@ -79,7 +79,8 @@ export default {
 <style type="text/css" lang="scss" scoped>
 .wrap {
   font-size: 10px;
-  margin-left: 10px;
+    color: #fff;
+  padding: 20px;
   .item1 {
     text-align: center;
     line-height: 20px;
@@ -88,10 +89,9 @@ export default {
     line-height: 20px;
   }
   .wrap_head {
-    background: blue;
+    background: #0a1c48;
     border-radius: 4px;
     padding: 5px 4px;
-    color: #fff;
   }
   .content_item {
     margin-top: 10px;
