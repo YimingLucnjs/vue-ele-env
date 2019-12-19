@@ -67,19 +67,19 @@ export default {
           //     left: "2%"
           //   },
           {
-            text: "30",
+            text: "15",
             subtext: "异常总数",
             textStyle: {
-              fontSize: 20,
-              color: "black"
+              fontSize: 18,
+              color: "#fff"
             },
             subtextStyle: {
               fontSize: 12,
-              color: "black"
+              color: "#fff"
             },
             textAlign: "center",
             x: "24%",
-            y: "38%"
+            y: "30%"
           }
         ],
         tooltip: {
@@ -100,18 +100,24 @@ export default {
               parms.percent +
               "%";
             return str;
+          },
+          textStyle: {
+            fontSize: 10
           }
         },
         legend: {
           orient: "vertical",
-          left: "48%",
+          left: "45%",
           align: "left",
           top: "middle",
           textStyle: {
-            color: "#8C8C8C"
+            color: "#fff",
+            fontSize: '8px'
           },
           icon: "circle",
-          height: 80 // 250
+          height: 50, // 250
+          itemWidth: 5,
+          itemGap: 5
         },
         series: [
           {
@@ -149,51 +155,51 @@ export default {
             },
             data: [
               {
-                value: 335,
+                value: 3,
                 legendname: "项目1",
-                name: "项目1  335",
+                name: "项目1 3",
                 itemStyle: {
-                  color: "#8d7fec"
+                  color: "#921140"
                 }
               },
               {
-                value: 310,
+                value: 3,
                 legendname: "项目02",
-                name: "项目2  310",
+                name: "项目2 3",
                 itemStyle: {
-                  color: "#5085f2"
+                  color: "#bb0505"
                 }
               },
               {
-                value: 234,
+                value: 2,
                 legendname: "项目03",
-                name: "项目3  234",
+                name: "项目3 2",
                 itemStyle: {
-                  color: "#e75fc3"
+                  color: "#fc2a2a"
                 }
               },
               {
-                value: 154,
+                value: 1,
                 legendname: "项目4",
-                name: "项目4  154",
+                name: "项目4 1",
                 itemStyle: {
-                  color: "#f87be2"
+                  color: "#fa6633"
                 }
               },
               {
-                value: 335,
+                value: 3,
                 legendname: "项目5",
-                name: "项目5  335",
+                name: "项目5 3",
                 itemStyle: {
-                  color: "#f2719a"
+                  color: "#fca223"
                 }
               },
               {
-                value: 335,
+                value: 3,
                 legendname: "项目6",
-                name: "项目6  335",
+                name: "项目6 3",
                 itemStyle: {
-                  color: "#fca4bb"
+                  color: "#fcd125"
                 }
               }
             ]

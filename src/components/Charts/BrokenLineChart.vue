@@ -53,12 +53,12 @@ export default {
           type: "category",
           axisLine: {
             lineStyle: {
-              color: "#0a2d70",
+              color: "#0a2c6f",
               width: 1
             }
           },
 
-          data: ["6月", "7月", "8月", "9月", "10月"]
+          data: ["6月", "7月", "8月", "9月", "10月", "11月"]
         },
         calculable: true,
         yAxis: [
@@ -73,20 +73,25 @@ export default {
             splitLine: {
               show: true,
               lineStyle: {
-                color: ["#0a2d70"],
+                color: ["#0a2c6f"],
                 width: 1,
                 type: "solid"
               }
             }
           }
         ],
-        grid: {},
+        grid: {
+          top: 20,
+          x: 30,
+          y: 5,
+          height: 80
+        },
         series: [
           {
-            data: [820, 932, 901, 734, 290],
+            data: [20, 32, 1, 34, 20, 10],
             type: "line",
             itemStyle: {
-              color: "#d0021b"
+              color: "#b1041d"
             },
             cursor: "pointer"
           }
@@ -94,7 +99,8 @@ export default {
         tooltip: {
           trigger: "axis",
           textStyle: {
-            color: "#222222"
+            color: "#000",
+            fontSize: 10
           },
           // position: {left: 100, top: 300},
           backgroundColor: "rgba(255,255,255,0.6)",
