@@ -36,9 +36,10 @@ export default {
 .noAlarm{
   width: 66px;
   height: 60px;
-  border-radius: 3px;
-  background: blue;
-  border: 1px solid #000;
+  /*border-radius: 3px;*/
+  background: url("~@/assets/info_images/abn_red_bg.png") no-repeat;
+  background-size: 100% 100%;
+  /*border: 1px solid #000;*/
   text-align: center;
 
   div:nth-child(1){
@@ -56,9 +57,10 @@ export default {
 .alarm{
   width: 66px;
   height: 60px;
-  border-radius: 3px;
-  background: blue;
-  border: 1px solid #000;
+  /*border-radius: 3px;*/
+  background: url("~@/assets/info_images/abn_blue_bg.png") no-repeat;
+  background-size: 100% 100%;
+  /*border: 1px solid #000;*/
   text-align: center;
 
   div:nth-child(1){
