@@ -43,7 +43,13 @@ export default {
 				goDown: false, // 是否下钻
 				bgColor: "#404a59", // 画布背景色
 				activeArea: [], // 区域高亮,同echarts配置项
-				data: []
+				data: [
+					{
+						name: '南京',
+						company: '某某公司',
+						value: 12
+					}
+				]
 				// 下钻回调(点击的地图名、实例对象option、实例对象)
 				// callback: function(name, option, instance) {}
 			},
@@ -58,7 +64,9 @@ export default {
 				textColor: "#eee",
 				lineColor: "rgba(147, 235, 248, .8)"
 			},
-			geoCoordMap: [],
+			geoCoordMap: {
+				'南京': [118.802682,32.09318]
+			},
 			option: ""
 		};
 	},
@@ -97,13 +105,9 @@ export default {
 							// })
 							this.opt.data[x].forEach(data => {
 								cityJson = {
-									city: data.city,
 									name: data.name,
 									value: data.value,
-									crew: data.crew,
 									company: data.company,
-									position: data.position,
-									region: data.region
 								};
 								cityData.push(cityJson);
 							});
@@ -217,10 +221,7 @@ export default {
 					temp.push({
 						name: data[i].name,
 						value: geoCoord.concat(data[i].value),
-						crew: data[i].crew,
-						company: data[i].company,
-						position: data[i].position,
-						region: data[i].region
+						company: data[i].company
 					});
 				}
 			}
@@ -253,7 +254,6 @@ export default {
 			this.chart = echarts.init(document.getElementById(this.id));
 			// let curGeoJson = {};
 			this.option = {
-				backgroundColor: "#404a59",
 				tooltip: {
 					show: true,
 					trigger: "item",
@@ -266,21 +266,11 @@ export default {
 					formatter: function(params) {
 						//, ticket, callback
 						return (
-							"简称：" +
+							"所属地区：" +
 							params.data.name +
 							"<br/>" +
-							"机组：" +
-							params.data.crew +
-							"万千瓦" +
-							"<br/>" +
 							"公司名称：" +
-							params.data.company +
-							"<br/>" +
-							"所属大区：" +
-							params.data.region +
-							"<br/>" +
-							"所在位置：" +
-							params.data.position
+							params.data.company 
 						);
 					}
 				},

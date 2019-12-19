@@ -73,13 +73,13 @@
             background: transparent;
         }
         .el-table th,.el-table tr {
-            background: transparent;
+            background: transparent; //#0960bf
         }
         .el-table--medium th, .el-table--medium td {
             padding: 5px 0;
         }
         .el-table--enable-row-hover .el-table__body tr:hover>td{
-            background-color: #212e3e;
+            background-color: rgba($color: #0d72dd, $alpha: 0.3);
         }
         .el-table th.is-leaf, .el-table td {
             border: none
@@ -90,7 +90,12 @@
         .el-table .warning-row {
             background: transparent;
         }
-
+        .el-table__header-wrapper .cell {
+            color: #0960bf;
+        }
+        .el-table__body-wrapper .cell {
+            color: rgba(255, 255, 255, 0.87);
+        }
         .el-table .success-row {
             background: rgba($color: #0e046e, $alpha: 0.4);
         }

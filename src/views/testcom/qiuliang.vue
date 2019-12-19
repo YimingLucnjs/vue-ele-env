@@ -1,12 +1,19 @@
 <template>
   <el-row
+    id="qiuliang"
     :gutter="10"
-    style="height:calc(100vh - 84px)"
+    style="height:calc(100vh - 84px);background:url('@/src/assets/info_images/bg.png')"
   >
     <el-col
       class="grid-content bg-purple"
       :span="6"
-    />
+    >
+      <img
+        src="@/assets/info_images/bg.png"
+        alt=""
+        srcset=""
+      >
+    </el-col>
     <el-col
       class="grid-content bg-purple"
       :span="12"
@@ -22,7 +29,6 @@
             width="100%"
           />
           <map-chart
-            style="background: #fff"
             height="100%"
             width="100%"
           />
@@ -31,10 +37,19 @@
             height="40%"
             width="40%"
           />
+          <div style="position:absolute;bottom:10px;right:0;">
+            <el-radio-group
+              v-model="tableRadio"
+              size="small"
+            >
+              <el-radio-button label="移动源" />
+              <el-radio-button label="固定源" />
+            </el-radio-group>
+          </div>
         </el-col>
         <el-col
           :span="24"
-          style="height:calc(100vh - 707px);background:#032449"
+          style="height:calc(100vh - 718px);"
         >
           <div class="table_norder">
             <info-table
@@ -64,6 +79,7 @@ export default {
   },
   data() {
     return {
+      tableRadio: '移动源',
       tableData: [
         {
           enterprise: '中石油集团测井有限公司华北事业部',
@@ -133,12 +149,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+#qiuliang {
+  .el-radio-button__inner {
+    border-color: #041991;
+    color: #041991;
+    background: transparent;
+  }
+  .is-active {
+    
+    background: #041991 ;
+    .el-radio-button__inner {
+      color: #fff;
+    }
+  }
   .grid-content {
     height: 100%;
   }
   .bg-purple {
-    background: #d3dce6;
+    // background: url('../../assets/bg.png')
   }
   .table_norder {
     padding: 10px;
@@ -146,4 +175,6 @@ export default {
     border-radius: 5px;
     border: 1px solid #1403a8;
   }
+}
+  
 </style>
