@@ -3,7 +3,7 @@ export default [
     {
         path: '/qiuliangtest',
         component: () => import('@/views/testcom/qiuliang.vue'),
-        hidden: true
+        hidden: true,
         // children: [
         //     {
         //         path: 'index',

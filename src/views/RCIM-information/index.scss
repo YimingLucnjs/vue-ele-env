@@ -1,0 +1,11 @@
+/**
+* 创建者：luyiming
+* 该样式表用于：
+* 创建时间： 2019-12-20 01:27:15
+*/
+.informationRCIM_view {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    @include bacgroundImg("../../assets/info_images/bg.png");
+}

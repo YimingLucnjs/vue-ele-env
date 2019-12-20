@@ -1,3 +1,4 @@
 build/*.js
 public
 dist
+src/

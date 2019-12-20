@@ -64,3 +64,9 @@
     border-bottom: $transparent-border-style;
   }
 }
+/* 引入背景图片 */
+@mixin bacgroundImg($url) {
+	background-image: url($url);
+	background-position: top left;
+	background-repeat: no-repeat;
+}

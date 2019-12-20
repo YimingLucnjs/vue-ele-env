@@ -1,10 +1,9 @@
 <template>
-	<el-container class="kd-abnormal-template">
+    <el-container class="kd-abnormal-template">
 		<el-aside width="300px" class="kd-left-tree-wrap" ></el-aside>
 		<el-container>
 			<el-header style="text-align: right; font-size: 12px"></el-header>
 			<el-main>1</el-main>
-			<el-aside width="100px" class="kd-left-tree-wrap" ></el-aside>
 		</el-container>
 	</el-container>
 </template>

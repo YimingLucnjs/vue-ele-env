@@ -345,3 +345,19 @@ export function removeClass(ele, cls) {
     ele.className = ele.className.replace(reg, ' ')
   }
 }
+
+export function setrem(){
+  debugger
+  function setRem(){
+      var windowWidth = window.innerWidth;
+      console.log(windowWidth);
+      var rem = parseInt(windowWidth/1980*100)+'px';
+      document.querySelector('html').style.fontSize = rem
+      console.log(rem)
+  }
+  setRem();
+  const debounceHandle = debounce(() => {
+    setRem()
+  }, 100)
+  window.addEventListener('resize', debounceHandle)
+}

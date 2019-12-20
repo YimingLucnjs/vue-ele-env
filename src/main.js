@@ -1,8 +1,9 @@
 import Vue from 'vue'
 
 import Cookies from 'js-cookie'
-
+// import 'lib-flexible/flexible.js'
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
+import {setrem} from "@/utils"
 
 import Element from 'element-ui'
 import './styles/element-variables.scss'
@@ -18,7 +19,7 @@ import './permission' // permission control
 import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
-
+setrem()
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
