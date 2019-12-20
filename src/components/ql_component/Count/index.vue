@@ -84,10 +84,12 @@ export default {
 		text-align: center;
 		margin-top: 5px;
 		.num {
-			padding: 8px 6px;
+			padding: 8px 9px;
 			margin: 0 3px;
-			background: rgba(53, 158, 228, 0.5);
-			border-radius: 5px;
+			// background: rgba(53, 158, 228, 0.5);
+			// border-radius: 5px;
+			background: url('~@/assets/info_images/count_bg.png') no-repeat;
+			background-size: 100%;
 			color: #fff;
 			display: inline-block;
 			font-size: 24px;

@@ -107,17 +107,21 @@ export default {
         },
         legend: {
           orient: "vertical",
-          left: "45%",
+          left: "55%",
           align: "left",
           top: "middle",
+          // textStyle: {
+          //   color: "#fff",
+          //   fontSize: '8px'
+          // },
           textStyle: {
-            color: "#fff",
-            fontSize: '8px'
-          },
+						color: "#ffffff",
+						fontSize: 16
+					},
           icon: "circle",
-          height: 50, // 250
-          itemWidth: 5,
-          itemGap: 5
+          height: 90, // 250
+          itemWidth: 10,
+          itemGap: 20
         },
         series: [
           {

@@ -1,18 +1,79 @@
 <template>
   <el-row
     id="qiuliang"
-    :gutter="10"
     style="height:100vh;"
   >
     <el-col
       class="grid-content bg-purple"
       :span="6"
     >
-      <!-- <img
-        src="@/assets/info_images/bg.png"
-        alt=""
-        srcset=""
-      > -->
+      <div
+        class="numberIndexWrap"
+        style="height:10%;"
+      >
+        <NumberIndex
+          :height="'76px'"
+          :width="'76px'"
+          :is-alarm="false"
+          type-name="异常总数"
+          :type-number="24"
+        />
+        <NumberIndex
+          :height="'76px'"
+          :width="'76px'"
+          :is-alarm="false"
+          type-name="已处理"
+          :type-number="22"
+        />
+        <NumberIndex
+          :height="'76px'"
+          :width="'76px'"
+          :is-alarm="true"
+          type-name="未处理"
+          :type-number="2"
+        />
+      </div>
+      <div class="side-dev">
+        <div
+          class="danger"
+          style="height:33%"
+        >
+          <div class="title">
+            月度异常趋势
+          </div>
+          <BrokenLineChart
+            id="BrokenLineChartId"
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div
+          class="danger"
+          style="height:33%"
+        >
+          <div class="title">
+            区域异常情况
+          </div>
+          <PieFullChart
+            id="PieFullChartId"
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div
+          class="danger"
+          style="height:33%"
+        >
+          <div class="title">
+            督办信息
+          </div>
+          <LunBo
+            id="LunBoId"
+            :abnormal-num="1"
+            style="height:calc(100% - 40px)"
+          />
+        </div>
+      </div>
     </el-col>
     <el-col
       class="grid-content bg-purple"
@@ -65,8 +126,33 @@
       class="grid-content bg-purple"
       :span="6"
     >
-      <div style="height:10%;" />
-      <div class="right-dev">
+      <div
+        class="numberIndexWrap"
+        style="height:10%"
+      >
+        <NumberIndex
+          :height="'76px'"
+          :width="'76px'"
+          :is-alarm="false"
+          type-name="在库"
+          :type-number="20"
+        />
+        <NumberIndex
+          :height="'76px'"
+          :width="'76px'"
+          :is-alarm="false"
+          type-name="运输"
+          :type-number="17"
+        />
+        <NumberIndex
+          :height="'76px'"
+          :width="'76px'"
+          :is-alarm="false"
+          type-name="作业"
+          :type-number="15"
+        />
+      </div>
+      <div class="side-dev">
         <div
           class="danger"
           style="height:33%"
@@ -113,8 +199,12 @@ import mapChart from "@/components/ql_component/Charts/mapChart";
 import barChart from "@/components/ql_component/Charts/barChart";
 import Count from "@/components/ql_component/Count";
 import infoTable from "@/components/ql_component/Table/info-table";
-import LinePercentage from '@/components/Charts/LinePercentage'; // 进度条
-import TopRank from '@/components/Charts/TopRank'; // 进度条
+import LinePercentage from "@/components/Charts/LinePercentage"; // 进度条
+import LunBo from "@/components/Charts/LunBo";
+import BrokenLineChart from "@/components/Charts/BrokenLineChart";
+import TopRank from "@/components/Charts/TopRank"; // 进度条
+import NumberIndex from "@/components/Charts/NumberIndex"; // 进度条
+import PieFullChart from "@/components/Charts/PieFullChart";
 import PieChart from "@/components/Charts/PieChart";
 
 export default {
@@ -122,10 +212,14 @@ export default {
 		mapChart,
 		barChart,
 		Count,
+		LunBo,
 		infoTable,
-    PieChart,
-    TopRank,
-    LinePercentage
+		PieChart,
+		NumberIndex,
+		BrokenLineChart,
+		TopRank,
+		PieFullChart,
+		LinePercentage
 	},
 	data() {
 		return {
@@ -212,15 +306,25 @@ export default {
 		color: #041991;
 		background: transparent;
 	}
-	.is-active {
+	.el-radio-group {
+		.is-active {
 		background: #041991;
 		.el-radio-button__inner {
 			color: #fff;
 		}
 	}
+	}
+	
 	.grid-content {
 		height: 100%;
-		.right-dev {
+		padding: 10px;
+		.numberIndexWrap {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 15px;
+		}
+		.side-dev {
 			height: 90%;
 			@include bacgroundImg("../../assets/info_images/border.png");
 			.danger {
