@@ -21,6 +21,6 @@ export default InformationRcim;
 <style lang="scss">
 
 .el-header{
-	height: 98px;
+	height: 120px;
 }
 </style>

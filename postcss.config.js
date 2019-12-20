@@ -1,6 +1,6 @@
 module.exports = {
   plugins: {
-    autoprefixer: {},
+    "autoprefixer": {},
     "postcss-pxtorem": {
       "rootValue": 100, 
       "propList": ["*"], // 转换为rem的属性

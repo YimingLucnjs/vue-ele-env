@@ -347,7 +347,6 @@ export function removeClass(ele, cls) {
 }
 
 export function setrem(){
-  debugger
   function setRem(){
       var windowWidth = window.innerWidth;
       console.log(windowWidth);
