@@ -5,8 +5,20 @@
 -->
 <template>
 	<div class="informationRCIM_view">
-		<el-header>Header</el-header>
-  		<el-main>Main</el-main>
+		<div class="header_wrap">
+			
+		</div>
+		<div class="main_wrap" :class="hideSide ? 'hidenside' : ''">
+			<div class="cont_wrap lf_cont_wrap fl">
+			</div>
+			<div class="cont_wrap mid_cont_wrap fl">
+				<div class="map_wrap"></div>
+				<div class="tb_wrap"></div>
+			</div>
+			<div class="cont_wrap rg_cont_wrap fl">
+
+			</div>
+		</div>
 	</div>	  
 </template>
 

@@ -3,12 +3,16 @@
 * 该页面用于：
 * 创建时间： 2019-12-20 01:27:15
 */
+import { debounce } from '@/utils'
+
 export default {
     name: 'InformationRcim_view',
     // 数据
     data() {
         return {
-            
+            resizefun: null,
+            // 控制信息舱左右侧侧边栏是否隐藏
+            hideSide: true,
         }
     },
     // 监听
@@ -21,11 +25,12 @@ export default {
     },
     // Vue挂载完成
     mounted() {
-
+        this.resizefun = this.__resizeHandler(100)
+        window.addEventListener('resize', this.resizefun)
     },
     // Vue实例销毁前
     beforeDestroy(){
-
+        window.removeEventListener('resize', this.resizefun)
     },
     // 挂载的方法
     methods: {
@@ -34,6 +39,16 @@ export default {
         */
         exampleFunc(){
             return void 0
-        }
+        },
+        __resizeHandler(daley){
+            return debounce(() => {
+                let width = window.innerWidth
+                if(width < 1280){
+                    this.hideSide = true
+                }else{
+                    this.hideSide = false
+                }
+            }, daley)
+        },
     },
 }
