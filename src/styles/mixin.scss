@@ -1,72 +1,116 @@
 @mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 @mixin scrollBar {
-  &::-webkit-scrollbar-track-piece {
-    background: #d3dce6;
-  }
+	&::-webkit-scrollbar-track-piece {
+		background: #d3dce6;
+	}
 
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
 
-  &::-webkit-scrollbar-thumb {
-    background: #99a9bf;
-    border-radius: 20px;
-  }
+	&::-webkit-scrollbar-thumb {
+		background: #99a9bf;
+		border-radius: 20px;
+	}
 }
 
 @mixin relative {
-  position: relative;
-  width: 100%;
-  height: 100%;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 @mixin pct($pct) {
-  width: #{$pct};
-  position: relative;
-  margin: 0 auto;
+	width: #{$pct};
+	position: relative;
+  	margin: 0 auto;
 }
 
 @mixin triangle($width, $height, $color, $direction) {
-  $width: $width/2;
-  $color-border-style: $height solid $color;
-  $transparent-border-style: $width solid transparent;
-  height: 0;
-  width: 0;
+	$width: $width/2;
+	$color-border-style: $height solid $color;
+	$transparent-border-style: $width solid transparent;
+	height: 0;
+	width: 0;
 
-  @if $direction==up {
-    border-bottom: $color-border-style;
-    border-left: $transparent-border-style;
-    border-right: $transparent-border-style;
-  }
+	@if $direction==up {
+		border-bottom: $color-border-style;
+		border-left: $transparent-border-style;
+		border-right: $transparent-border-style;
+	}
 
-  @else if $direction==right {
-    border-left: $color-border-style;
-    border-top: $transparent-border-style;
-    border-bottom: $transparent-border-style;
-  }
+	@else if $direction==right {
+		border-left: $color-border-style;
+		border-top: $transparent-border-style;
+		border-bottom: $transparent-border-style;
+	}
 
-  @else if $direction==down {
-    border-top: $color-border-style;
-    border-left: $transparent-border-style;
-    border-right: $transparent-border-style;
-  }
+	@else if $direction==down {
+		border-top: $color-border-style;
+		border-left: $transparent-border-style;
+		border-right: $transparent-border-style;
+	}
 
-  @else if $direction==left {
-    border-right: $color-border-style;
-    border-top: $transparent-border-style;
-    border-bottom: $transparent-border-style;
-  }
+  	@else if $direction==left {
+		border-right: $color-border-style;
+		border-top: $transparent-border-style;
+		border-bottom: $transparent-border-style;
+  	}
 }
 /* 引入背景图片 */
 @mixin bacgroundImg($url) {
 	background-image: url($url);
 	background-position: top left;
 	background-repeat: no-repeat;
+	background-size: cover;
+}
+// 右侧添加竖线 颜色，线条宽度，线条高度
+@mixin rightLine($color, $width, $height){
+	position: relative;
+  	&:after {
+		content: '';
+		width: $width;
+		height: $height;
+		background-color: $color;
+		display: inline-block;
+		position: absolute;
+	}
+}
+// 文本 超出省略号
+@mixin ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+// 多行文本 超出行数省略号
+@mixin ellipsisByRows($rows) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $rows;
+	-webkit-box-orient: vertical;
+}
+// 禁止选中文本 pc端
+@mixin unSelectTextPC {
+	-moz-user-select:none; /*火狐*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -ms-user-select:none; /*IE10*/
+    -khtml-user-select:none; /*早期浏览器*/
+    user-select:none;
+}
+// 禁止选中文本 手机端
+@mixin unSelectTextMB {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

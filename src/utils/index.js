@@ -353,6 +353,9 @@ export function setrem(){
       if(router !== '/information'){
         windowWidth = 1980
       }
+      if(windowWidth < 1080){
+        windowWidth = 1080
+      }
       console.log(windowWidth);
       var rem = parseInt(windowWidth/1980*100)+'px';
       document.querySelector('html').style.fontSize = rem

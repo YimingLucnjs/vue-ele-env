@@ -4,9 +4,12 @@
 * 创建时间： 2019-12-20 01:27:15
 */
 import { debounce } from '@/utils'
-
+import infoHeader from './components/Header/index.vue'
 export default {
     name: 'InformationRcim_view',
+    components: {
+        infoHeader,
+    },
     // 数据
     data() {
         return {
@@ -26,6 +29,7 @@ export default {
     // Vue挂载完成
     mounted() {
         this.resizefun = this.__resizeHandler(100)
+        this.resizefun()
         window.addEventListener('resize', this.resizefun)
     },
     // Vue实例销毁前

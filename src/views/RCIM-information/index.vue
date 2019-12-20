@@ -5,9 +5,7 @@
 -->
 <template>
 	<div class="informationRCIM_view">
-		<div class="header_wrap">
-			
-		</div>
+		<info-header></info-header>
 		<div class="main_wrap" :class="hideSide ? 'hidenside' : ''">
 			<div class="cont_wrap lf_cont_wrap fl">
 			</div>
@@ -29,10 +27,4 @@ export default InformationRcim;
 
 <style lang="scss" scoped>
 @import "./index.scss";
-</style>
-<style lang="scss">
-
-.el-header{
-	height: 120px;
-}
 </style>
