@@ -1,5 +1,8 @@
 <template>
-  <div class="wrap">
+  <div
+    class="wrap"
+    :style="{height: height,width: width}"
+  >
     <div :class="isAlarm?'alarm':'noAlarm'">
       <div>{{ typeName }}</div>
       <div>{{ typeNumber }}</div>
@@ -22,6 +25,14 @@ export default {
       // 督办数量
       type: Number,
       default: 23
+    },
+    width: {
+      type: String,
+      default: "66px"
+    },
+    height: {
+      type: String,
+      default: "60px"
     }
   },
   data() {
@@ -34,8 +45,8 @@ export default {
 </script>
 <style type="text/css" lang="scss" scoped>
 .noAlarm{
-  width: 66px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   /*border-radius: 3px;*/
   background: url("~@/assets/info_images/abn_red_bg.png") no-repeat;
   background-size: 100% 100%;
@@ -43,20 +54,20 @@ export default {
   text-align: center;
 
   div:nth-child(1){
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
-    line-height: 26px;
+    line-height: 40px;
   }
 
   div:nth-child(2){
-    font-size: 24px;
+    font-size: 26px;
     color: #fff;
     line-height: 26px;
   }
 }
 .alarm{
-  width: 66px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   /*border-radius: 3px;*/
   background: url("~@/assets/info_images/abn_blue_bg.png") no-repeat;
   background-size: 100% 100%;
@@ -64,13 +75,13 @@ export default {
   text-align: center;
 
   div:nth-child(1){
-    font-size: 12px;
+    font-size: 14px;
     color: #d0021b;
-    line-height: 26px;
+    line-height: 40px;
   }
 
   div:nth-child(2){
-    font-size: 24px;
+    font-size: 26px;
     color: #d0021b;
     line-height: 26px;
   }

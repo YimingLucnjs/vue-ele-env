@@ -53,7 +53,7 @@ export default {
           type: "category",
           axisLine: {
             lineStyle: {
-              color: "#0a2c6f",
+              color: "#0462e3",
               width: 1
             }
           },
@@ -66,7 +66,7 @@ export default {
             type: "value",
             axisLine: {
               lineStyle: {
-                color: "#0a2d70",
+                color: "#0462e3",
                 width: 1
               }
             },
@@ -84,7 +84,7 @@ export default {
           top: 20,
           x: 30,
           y: 5,
-          height: 80
+          height: '60%'
         },
         series: [
           {
