@@ -347,8 +347,12 @@ export function removeClass(ele, cls) {
 }
 
 export function setrem(){
-  function setRem(){
-      var windowWidth = window.innerWidth;
+  const setRem = () => {
+      let windowWidth = window.innerWidth;
+      const router = window.location.hash.replace('#', '') 
+      if(router !== '/information'){
+        windowWidth = 1980
+      }
       console.log(windowWidth);
       var rem = parseInt(windowWidth/1980*100)+'px';
       document.querySelector('html').style.fontSize = rem
@@ -359,4 +363,5 @@ export function setrem(){
     setRem()
   }, 100)
   window.addEventListener('resize', debounceHandle)
+  return setRem
 }
